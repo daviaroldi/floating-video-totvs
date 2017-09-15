@@ -1,4 +1,34 @@
-<div id="video" ngDraggable>
-  <div class="modal-header bg-primary">Header</div>
-  <object width="420" height="315" data="https://www.youtube.com/embed/XGSy3_Czz8k"></object>
+<!-- set a floating video object -->
+<div id="video" ngDraggable *ngIf="showVideo;">
+  <!-- glyphicon-resize-full -->
+  <div class="modal-header bg-primary">&nbsp;<span (click)="closeVideo();" class="glyphicon glyphicon-remove" aria-hidden="true"></span></div>
+  <object width="242" height="191" [data]="safeLinkVideo"></object>
 </div>
+
+<!-- <button class="btn btn-default" type="button" (click)="showVideo = !showVideo;">Toggle Video</button> -->
+
+<form>
+  <div class="row">
+    <div class="form-group col-xs-3">
+      <label for="user-interface">
+        Inteface de Usuário
+        <span (click)="fieldVideo('user-interface');"
+              class="glyphicon glyphicon-info-sign"
+              aria-hidden="true"
+              alt="Assista a um video explicativo "></span>
+      </label>
+      <select type="t" class="form-control" id="user-interface" name="user-interface">
+        <option value="">Selecione</option>
+        <option value="1">Quick Service</option>
+      </select>
+    </div>
+    <div class="form-group col-xs-3">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+    </div>
+    <div class="form-group col-xs-6">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+    </div>
+  </div>
+</form>

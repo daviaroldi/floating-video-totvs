@@ -20,3 +20,9 @@
   -moz-border-radius-topleft: 6px;
   -moz-border-radius-topright: 6px;
 }
+
+  .modal-header .glyphicon-remove{
+    float: right;
+    margin-top: 2px;
+    cursor: pointer;
+  }

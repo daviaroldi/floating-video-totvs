@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from "@angular/router";
+import { HttpModule } from "@angular/http";
 import { AngularDraggableModule } from 'angular2-draggable';
 
 import { AppComponent } from './app.component';
@@ -19,7 +20,8 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
-    AngularDraggableModule
+    AngularDraggableModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
