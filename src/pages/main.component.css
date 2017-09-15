@@ -1,12 +1,40 @@
 #video {
-  width: min-content;
   position: absolute;
-  right: 5px;
+  z-index: 99999!important;
+}
+
+.video-small {
   bottom: 5px;
+  height: 226px;
+  right: 5px;
+  width: 242px;
+}
+.video-full {
+  bottom: 5px;
+  height: 436px;
+  right: 5px;
+  width:  600px;
 }
 
 #video:active {
   cursor: grabbing;
+}
+
+form {
+  border: 1px solid #CCCCCC;
+  margin: 15px;
+  border-radius: 5px;
+}
+
+.fields {
+  padding: 0 10px;
+}
+
+.header {
+  background: -webkit-gradient(linear, left top, right top, from(#CCCCCC), to(#000000)) no-repeat;
+  background: -moz-linear-gradient(top, #FFFFFF, #CCCCCC);
+  border-radius: 5px 5px 0 0;
+  padding: 5px;
 }
 
 .modal-header {
@@ -21,8 +49,11 @@
   -moz-border-radius-topright: 6px;
 }
 
-  .modal-header .glyphicon-remove{
+  .modal-header .glyphicon-remove, .modal-header .glyphicon-resize-full, .modal-header .glyphicon-resize-small{
     float: right;
     margin-top: 2px;
     cursor: pointer;
+  }
+  .modal-header .glyphicon-resize-small, .modal-header .glyphicon-resize-full{
+    margin-right: 8px;
   }

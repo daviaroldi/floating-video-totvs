@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './../pages/main.component';
 
 const appRoutes: Routes = [
+  { path: '', redirectTo: 'main', pathMatch: 'full' },
   { path: 'main', component: MainComponent },
   { path: 'app',  component: AppComponent }
 ]

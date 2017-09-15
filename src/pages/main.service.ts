@@ -18,15 +18,6 @@ export class MainService {
   * @param params: []
   */
   get(endpoint){
-    // let headers = new Headers({
-    //   'Content-Type': 'application/json',
-    //   'Accept': 'application/json'
-    // });
-    //
-    // let options = {
-    //   headers : headers
-    // };
-
     return this.http.get(endpoint)
       .map(res => res.json());
   }

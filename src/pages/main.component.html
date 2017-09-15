@@ -1,34 +1,66 @@
 <!-- set a floating video object -->
-<div id="video" ngDraggable *ngIf="showVideo;">
+<div id="video" ngDraggable *ngIf="showVideo;" [class]="videoProperties.video_class">
   <!-- glyphicon-resize-full -->
-  <div class="modal-header bg-primary">&nbsp;<span (click)="closeVideo();" class="glyphicon glyphicon-remove" aria-hidden="true"></span></div>
-  <object width="242" height="191" [data]="safeLinkVideo"></object>
+  <div class="modal-header bg-primary">
+    {{ titleVideo }}
+    <span (click)="closeVideo();" class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+    <span (click)="resizeVideo();" [class]="videoProperties.icon_class" aria-hidden="true"></span>
+  </div>
+  <object [width]="videoProperties.width" [height]="videoProperties.height" [data]="safeLinkVideo"></object>
 </div>
 
 <!-- <button class="btn btn-default" type="button" (click)="showVideo = !showVideo;">Toggle Video</button> -->
 
 <form>
   <div class="row">
-    <div class="form-group col-xs-3">
-      <label for="user-interface">
-        Inteface de Usuário
-        <span (click)="fieldVideo('user-interface');"
-              class="glyphicon glyphicon-info-sign"
-              aria-hidden="true"
-              alt="Assista a um video explicativo "></span>
-      </label>
-      <select type="t" class="form-control" id="user-interface" name="user-interface">
-        <option value="">Selecione</option>
-        <option value="1">Quick Service</option>
-      </select>
+    <div class="form-group col-xs-12">
+      <div class="header">
+        <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>
+        Configurações do Aplicativo
+      </div>
     </div>
-    <div class="form-group col-xs-3">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-    </div>
-    <div class="form-group col-xs-6">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+  </div>
+  <div class="fields">
+    <div class="row">
+      <div class="form-group col-xs-3">
+        <label for="user-interface">
+          Inteface de Usuário
+          <span (click)="fieldVideo('user-interface');"
+                *ngIf="fields['user-interface']"
+                class="glyphicon glyphicon-info-sign"
+                aria-hidden="true"
+                alt="Assista a um video explicativo"></span>
+        </label>
+        <select class="form-control" id="user-interface" name="user-interface">
+          <option value="">Selecione</option>
+          <option value="1">Quick Service</option>
+        </select>
+      </div>
+      <div class="form-group col-xs-3">
+        <label for="has-serie-itens">
+          Itens com número de série
+          <span (click)="fieldVideo('has-serie-itens');"
+                *ngIf="fields['has-serie-itens']"
+                class="glyphicon glyphicon-info-sign"
+                aria-hidden="true"
+                alt="Assista a um video explicativo"></span>
+        </label>
+        <select class="form-control" id="has-serie-itens" name="has-serie-itens">
+          <option value="false">NÃO</option>
+          <option value="true">SIM</option>
+        </select>
+      </div>
+      <div class="form-group col-xs-6">
+        <label for="amount-signature">
+          Montante para imprimir assinatura
+          <span (click)="fieldVideo('amount-signature');"
+                *ngIf="fields['amount-signature']"
+                class="glyphicon glyphicon-info-sign"
+                aria-hidden="true"
+                alt="Assista a um video explicativo"></span>
+        </label>
+        <input type="text" class="form-control" id="amount-signature" name="amount-signature" placeholder="Montante para imprimir assinatura">
+      </div>
     </div>
   </div>
 </form>

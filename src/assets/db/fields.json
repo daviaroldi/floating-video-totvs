@@ -1,9 +1,12 @@
 {
-  "main": [
-    {
+  "main": {
       "user-interface": {
-        "link": "https://www.youtube.com/embed/2QLM0AQLfgw"
+        "link": "https://www.youtube.com/embed/2QLM0AQLfgw",
+        "title": "Explicação Interface Usuário"
+      },
+      "has-serie-itens": {
+        "link": "https://www.youtube.com/embed/Dyj88RAStQU",
+        "title": "Explicação Itens Série"
       }
     }
-  ]
 }
