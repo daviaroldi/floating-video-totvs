@@ -31,8 +31,8 @@ form {
 }
 
 .header {
-  background: -webkit-gradient(linear, left top, right top, from(#CCCCCC), to(#000000)) no-repeat;
   background: -moz-linear-gradient(top, #FFFFFF, #CCCCCC);
+  background: -webkit-linear-gradient(#FFFFFF, #CCCCCC);
   border-radius: 5px 5px 0 0;
   padding: 5px;
 }
